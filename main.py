@@ -2,10 +2,10 @@ import helper
 from flask import Flask, request, Response, render_template, redirect, url_for
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/") # reagieren auf url?
 def index():
-    items = helper.get_all()
-    return render_template('index.html', items=items)
+    todos = helper.get_all()
+    return render_template('index.html', todos=todos) # Import von items nach index
 
 
 @app.route('/add', methods=["POST"])
