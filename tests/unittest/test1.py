@@ -4,8 +4,8 @@ class TestTodos(unittest.TestCase):
 
     def testAdd(self):
         helper.delete()
-        helper.add("new")
-        self.assertEqual(helper.todos[0].title, "new")
+        helper.add("shopping")
+        self.assertEqual(helper.todos[0].title, "shopping")
         self.assertFalse(helper.todos[0].isCompleted)
 
     def testUpdate(self):
@@ -16,5 +16,5 @@ class TestTodos(unittest.TestCase):
         helper.add("book")
         self.assertEqual(helper.todos[1].title, "bbbook")
 
-# Enter this in the command prompt to run tests:
+# Folgendes eingeben, um Tests auszuführen:
 # py -m unittest tests/test1.py

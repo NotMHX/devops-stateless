@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+import datetime
 
 todos = []
 
@@ -7,10 +8,12 @@ todos = []
 class Todo:
     title: str
     isCompleted: bool = False
+    
 
 
 def add(title):
     title = title.replace('b', 'bbb').replace('B', 'Bbb') #hier wird bbb-siert lmao
+    date = datetime.strptime(date, '%Y-%m-%d')
     todos.append(Todo(title)) # daten gespeichert
 
 
