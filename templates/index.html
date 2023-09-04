@@ -16,9 +16,9 @@
         <div class="ui divider" />
         <form name="item" class="ui form" action="/add" method="post">
             <div class="field" style="margin-top: 10px;">
-                <div for="text" class="ui pointing below label">Was gibbbt es zu tun?</div>
+                <div for="text date" class="ui pointing below label">Was gibbbt es zu tun?</div>
                 <div class="ui action input">
-                    <input autofocus name="text" type="text" name="text" placeholder="Fürs Modul lernen...">
+                    <input autofocus type="text" name="text" placeholder="Fürs Modul lernen...">
                     <input autofocus type="date" name="date" placeholder="Fristdatum [Y-M-D]">
                     <button class="ui blue button" type="submit">Hinzufügen</button>
                 </div>
@@ -28,7 +28,7 @@
 
         {% for todo in todos %}
         <div class="ui segment" style="overflow:hidden; position: relative">
-            <span class="ui header" style="margin-left: 0.5em;">{{todo.title}}</span>
+            <span class="ui header" style="margin-left: 0.5em;">{{todo.title}}, due {{todo.date}}</span>
             {% if todo.isCompleted %}
             <a class="ui green left corner label" href="/update/{{loop.index0}}"><i
                     class="check square outline icon"></i></a>
