@@ -1,7 +1,8 @@
-import unittest, helper
+import unittest
+import helper
+
 
 class TestTodos(unittest.TestCase):
-
     def testAdd(self):
         helper.delete()
         helper.add("shopping")
@@ -15,6 +16,7 @@ class TestTodos(unittest.TestCase):
     def testBBB(self):
         helper.add("book")
         self.assertEqual(helper.todos[1].title, "bbbook")
+
 
 # Folgendes eingeben, um Tests auszuführen:
 # py -m unittest tests/test1.py
