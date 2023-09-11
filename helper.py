@@ -1,20 +1,22 @@
 from dataclasses import dataclass
-from datetime import datetime
+import datetime, operator
 
 todos = []
 
 @dataclass
 class Todo:
-    title: str
+    title: str  
+    date: datetime = "2024-01-01"
     isCompleted: bool = False
-    date: datetime = datetime(2023, 1, 1)
     
 
 
-def add(title, date=None):
+def add(title, date):
+    date = datetime.datetime.strptime(date, '%Y-%m-%d')
+
     title = title.replace('b', 'bbb').replace('B', 'Bbb') #hier wird bbb-siert lmao
-    date = datetime.strptime(date, '%Y-%m-%d')
-    todos.append(Todo(title, date)) # daten gespeichert
+    todos.append(Todo(title,  date)) # daten gespeichert
+    todos.sort(key=operator.attrgetter("date"))
 
 
 def get_all():
